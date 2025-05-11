@@ -4,12 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PageTransitionReturnCancelApp"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Title="PageTransitionReturnCancelApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- Flyout header for the drawer menu -->
+    <Shell.FlyoutHeader>
+        <StackLayout>
+            <Label Text="My App" FontSize="24" HorizontalOptions="Center" Padding="10" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <!-- Menu items for navigation -->
+    <!-- Home: Main entry page -->
+    <FlyoutItem Title="Home" Icon="home.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <!-- TransitionSourcePage1: Demonstrates basic navigation with return value -->
+    <FlyoutItem Title="TransitionSourcePage1">
+        <ShellContent Route="TransitionSourcePage1" ContentTemplate="{DataTemplate local:TransitionSourcePage1}" />
+    </FlyoutItem>
+
+    <!-- TransitionSourcePage2: Demonstrates navigation with cancellation handling -->
+    <FlyoutItem Title="TransitionSourcePage2">
+        <ShellContent Route="TransitionSourcePage2" ContentTemplate="{DataTemplate local:TransitionSourcePage2}" />
+    </FlyoutItem>
 
 </Shell>
