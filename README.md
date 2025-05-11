@@ -17,7 +17,7 @@ A .NET MAUI demo application showcasing page navigation with return values and c
 ## Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/PageTransitionReturnCancelApp.git
+   git clone https://github.com/shoderico/PageTransitionReturnCancelApp.git
    ```
 2. Open the solution (`PageTransitionReturnCancelApp.sln`) in Visual Studio.
 3. Restore NuGet packages:
